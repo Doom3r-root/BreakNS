@@ -9,7 +9,7 @@ This tool creates and sends deauthentication packets to disconnect all devices f
 
 ## Hardware Requirements
 
-This tools requires a **wireless adapter with monitor mode support**.
+This tool requires a **wireless adapter with monitor mode support**.
 
 Recommended setup:
 

@@ -30,6 +30,14 @@ INTERFACE = "wlan1"
 ```
 
 # Requirements : 
-1. Scapy library
-2. WiFi adapter with monitor mode and packet injection capabilities
-3. Root/sudo privileges
+- Scapy library
+- WiFi adapter with monitor mode and packet injection capabilities
+- Root/sudo privileges
+
+## Running
+
+Run the script with root privileges:
+
+```bash
+sudo python3 breakns.py
+```

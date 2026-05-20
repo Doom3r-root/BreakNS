@@ -5,7 +5,7 @@ This tool creates and sends deauthentication packets to disconnect all devices f
 - Automated channel hopping across common WiFi channels (1-13)
 - Interactive interface selection
 - Multiple operating modes
-- Real-time packet countern
+- Real-time packet counter
 
 ## Hardware Requirements
 

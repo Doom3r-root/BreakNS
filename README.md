@@ -7,6 +7,28 @@ This tool creates and sends deauthentication packets to disconnect all devices f
 - Real-time packet counter
 - Clean interface setup and teardown
 
+## Hardware Requirements
+
+This tools requires a **wireless adapter with monitor mode support**.
+
+Recommended setup:
+
+- External USB Wi-Fi adapter
+- Monitor mode support
+- Linux-compatible chipset
+
+Default interface used in the script:
+
+```txt
+wlan1
+```
+
+If your wireless interface name is different (for example `wlan0` or `wlp2s0`), edit this line inside the script:
+
+```python
+INTERFACE = "wlan1"
+```
+
 # Requirements : 
 1. Scapy library
 2. WiFi adapter with monitor mode and packet injection capabilities

